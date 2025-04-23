@@ -11,9 +11,9 @@ function ExecutiveBoard() {
       id: 1,
       name: 'Su San Yar Tun',
       position: 'Co-President',
-      major: 'Chemical Biological Engineering',
+      major: 'Chemical  Engineering',
       year: 'Junior',
-      bio: 'Su is passionate about promoting diversity in tech and helping fellow students succeed in their academic and professional journeys.',
+      bio: 'I\'m a chemical engineering student and my life-long dream is to own a duck, bunny, ferret, and a cat!',
       image: getPublicImageUrl('su.webp')
     },
     {
@@ -22,7 +22,7 @@ function ExecutiveBoard() {
       position: 'Co-President',
       major: 'Mechanical Engineering',
       year: 'Junior',
-      bio: 'Anisha is focused on building community connections and creating meaningful opportunities for SASE members.',
+      bio: 'My name is Anisha and I am excited to be Co-President of SASE!',
       image: getPublicImageUrl('anisha.webp')
     },
     {
@@ -31,16 +31,16 @@ function ExecutiveBoard() {
       position: 'Finance Chair',
       major: 'Physics',
       year: 'Junior',
-      bio: 'Stefania ensures smooth communication within the organization and manages our documentation and meeting minutes.',
+      bio: 'I\'m a Physics major. I"m from India, grew up in Dubai, and am trained in ballet!',
       image: getPublicImageUrl('stef.webp')
     },
     {
       id: 4,
       name: 'Jasmine Cheng',
       position: 'Fundraising Chair',
-      major: 'Electrical & Computer Engineering',
+      major: 'Electrical Engineering',
       year: 'Sophomore',
-      bio: 'Jasmine handles our budget, fundraising efforts, and ensures financial transparency within the organization.',
+      bio: 'My name is Jasmine Cheng, Electrical Engineering major. I\'m a second year student from Fort Collins and I love painting, matcha, and exploring new places!',
       image: getPublicImageUrl('jasm.webp')
     },
     {
@@ -49,7 +49,7 @@ function ExecutiveBoard() {
       position: 'Event Coordinator Chair',
       major: 'Computer Science',
       year: 'Junior',
-      bio: 'Kyle coordinates workshops, networking events, and other professional development opportunities for our members.',
+      bio: 'Hey I\'m Kyle , a 3rd year Computer Science with a concentration in Software Engineering.',
       image: getPublicImageUrl('kyle.webp')
     },
     {
@@ -58,7 +58,7 @@ function ExecutiveBoard() {
       position: 'Marketing Chair',
       major: 'Mechanical Engineering',
       year: 'Sophomore',
-      bio: 'Kai manages our social media presence, designs promotional materials, and helps increase our visibility on campus.',
+      bio: 'Hi I\'m Kai and I\'m a Sophomore in mechanical engineering from Eagan, MN.',
       image: getPublicImageUrl('kai.webp')
     },
     {
@@ -67,7 +67,7 @@ function ExecutiveBoard() {
       position: 'Conference Chair',
       major: 'Mechanical Engineering',
       year: 'Junior',
-      bio: 'Mason plans fun social events to help members connect and build relationships outside of professional settings.',
+      bio: 'My name is Mason Maynell, I\'m a junior mechanical engineering student, and I\'ve caught myself on fire only once.',
       image: getPublicImageUrl('mason.webp')
     }
   ];
