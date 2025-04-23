@@ -1,13 +1,646 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Additional CSS for specific components */
+
+/* Home Page - Apple-inspired with CSU colors */
+.hero {
+  background-color: var(--csu-green);
+  color: white;
+  padding: 8rem 2rem;
+  text-align: center;
+  margin-bottom: 0;
+  position: relative;
+  overflow: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(30, 77, 43, 0.8), rgba(30, 77, 43, 0.9));
+  z-index: 1;
+}
+
+.hero .content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  color: var(--csu-gold);
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.involvement-list {
+  list-style-type: none;
+  margin: 0 0 2rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.involvement-list li {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+}
+
+/* Events Page - Apple-inspired with CSU colors */
+.event-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+  transition: var(--transition-standard);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.event-date, .event-location {
+  color: #666;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.featured-event {
+  background: linear-gradient(to right, rgba(30, 77, 43, 0.03), white);
+  border-left: 4px solid var(--csu-green);
+}
+
+.event-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.event-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.event-description {
+  flex: 2;
+  min-width: 300px;
+}
+
+.event-description h3 {
+  margin: 1.5rem 0 1rem;
+  color: var(--csu-green);
+  font-weight: 500;
+}
+
+.past-event {
+  opacity: 0.7;
+}
+
+/* Meetings Page - Apple-inspired with CSU colors */
+.schedule {
+  margin-top: 3rem;
+}
+
+.schedule-item {
+  display: flex;
+  margin-bottom: 2rem;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+  transition: var(--transition-standard);
+}
+
+.schedule-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.date {
+  background: var(--csu-green);
+  color: white;
+  padding: 2rem;
+  font-weight: 500;
+  min-width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.content {
+  padding: 2rem;
+  flex-grow: 1;
+}
+
+.content h3 {
+  margin-bottom: 0.8rem;
+  color: var(--apple-dark);
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+/* Gallery Page - Apple-inspired with CSU colors */
+.gallery-intro {
+  margin-bottom: 3rem;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.gallery-item {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+  transition: var(--transition-standard);
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.gallery-caption {
+  padding: 1.5rem;
+}
+
+.gallery-caption h3 {
+  margin-bottom: 0.8rem;
+  color: var(--csu-green);
+  font-weight: 500;
+}
+
+/* Executive Board Page - Apple-inspired with CSU colors */
+.board-intro {
+  margin-bottom: 3rem;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.board-member {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+  transition: var(--transition-standard);
+}
+
+.board-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.member-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.member-info {
+  padding: 2rem;
+}
+
+.member-position {
+  color: var(--csu-green);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.member-details {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.member-bio {
+  line-height: 1.6;
+}
+
+/* Contact Page - Apple-inspired with CSU colors */
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  gap: 2rem;
+}
+
+.contact-method {
+  flex: 1;
+  min-width: 250px;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+}
+
+.contact-method h3 {
+  margin-bottom: 1rem;
+  color: var(--csu-green);
+  font-weight: 500;
+}
+
+.social-media {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: white;
+  border-radius: 30px;
+  transition: var(--transition-standard);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  gap: 0.5rem;
+}
+
+.social-link:hover {
+  background: var(--csu-green);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form, .subscribe-form {
+  max-width: 600px;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  color: var(--apple-dark);
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition-standard);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: var(--csu-green);
+  box-shadow: 0 0 0 2px rgba(30, 77, 43, 0.2);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* Additional styles for the About page */
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.activity-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+  transition: var(--transition-standard);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.activity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.activity-card h3 {
+  color: var(--csu-green);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Additional styles for the Events page */
+.countdown-timer {
+  margin-top: 2rem;
+  background: var(--csu-green);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.countdown-label {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.countdown-time {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.company-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.company-logo {
+  background: #f5f5f7;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* Styles for the Meetings page and other pages */
+.meetings-page .hero,
+.events-page .hero,
+.gallery-page .hero,
+.executive-board-page .hero,
+.contact-page .hero {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Additional styles to complete the modern Apple+CSU theme */
+.hero:after {
+  background: linear-gradient(rgba(30, 77, 43, 0.8), rgba(30, 77, 43, 0.9));
+}
+
+main {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+/* Fix all internal links to use HashRouter format */
+.logo a, 
+.nav-links a, 
+.footer-section a {
+  color: inherit;
+}
+
+/* Add these styles to your index.css file */
+
+/* Container for both forms */
+.forms-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Contact form container */
+.contact-form-container {
+  flex: 2;
+  min-width: 350px;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+}
+
+/* Subscribe form container */
+.subscribe-form-container {
+  flex: 1;
+  min-width: 300px;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form headings */
+.contact-form-container h3,
+.subscribe-form-container h3 {
+  color: var(--csu-green);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .forms-container {
+    flex-direction: column;
+  }
+  
+  .contact-form-container,
+  .subscribe-form-container {
+    width: 100%;
+  }
+}
+
+/* Font awesome icons for social links */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+.social-link i {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add animation for buttons and cards */
+.btn, 
+.event-card, 
+.gallery-item, 
+.board-member, 
+.activity-card, 
+.schedule-item,
+.social-link {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--csu-green);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a5f38;
+}
+
+/* Add Apple-style focus states */
+button:focus, 
+a:focus, 
+input:focus, 
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(30, 77, 43, 0.3);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+/* Add Apple-style text selection */
+::selection {
+  background: rgba(200, 195, 114, 0.3);
+  color: var(--csu-green);
+}
+
+/* Add subtle parallax effect to hero */
+.hero {
+  background-attachment: fixed;
+}
+
+/* Add subtle animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Refinements for mobile */
+@media (max-width: 768px) {
+  .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .hero {
+    padding: 6rem 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .event-details, .contact-info {
+    flex-direction: column;
+  }
+  
+  .event-info, .contact-method {
+    padding-right: 0;
+  }
+  
+  .schedule-item {
+    flex-direction: column;
+  }
+  
+  .date {
+    padding: 1rem;
+    min-width: auto;
+  }
+  
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .nav-links {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+/* Fix image placeholders */
+.gallery-image, .member-image {
+  background-color: #f5f5f7;
+}
+
+/* Fix links for HashRouter */
+.footer-section a {
+  cursor: pointer;
 }
