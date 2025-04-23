@@ -1,16 +1,13 @@
 {
   "files": {
-    "main.css": "/sase-csu-website/static/css/main.f855e6bc.css",
-    "main.js": "/sase-csu-website/static/js/main.9357bfde.js",
-    "static/js/453.8176256c.chunk.js": "/sase-csu-website/static/js/453.8176256c.chunk.js",
-    "static/media/logo.svg": "/sase-csu-website/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.css": "/sase-csu-website/static/css/main.0c0ac73b.css",
+    "main.js": "/sase-csu-website/static/js/main.516c1902.js",
     "index.html": "/sase-csu-website/index.html",
-    "main.f855e6bc.css.map": "/sase-csu-website/static/css/main.f855e6bc.css.map",
-    "main.9357bfde.js.map": "/sase-csu-website/static/js/main.9357bfde.js.map",
-    "453.8176256c.chunk.js.map": "/sase-csu-website/static/js/453.8176256c.chunk.js.map"
+    "main.0c0ac73b.css.map": "/sase-csu-website/static/css/main.0c0ac73b.css.map",
+    "main.516c1902.js.map": "/sase-csu-website/static/js/main.516c1902.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.9357bfde.js"
+    "static/css/main.0c0ac73b.css",
+    "static/js/main.516c1902.js"
   ]
 }
