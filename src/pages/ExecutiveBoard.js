@@ -14,7 +14,8 @@ function ExecutiveBoard() {
       major: 'Chemical  Engineering',
       year: 'Junior',
       bio: 'I\'m a chemical engineering student and my life-long dream is to own a duck, bunny, ferret, and a cat!',
-      image: getPublicImageUrl('su.webp')
+      image: getPublicImageUrl('su.webp'),
+      linkedin: 'https://www.linkedin.com/in/su-san-yar-tun-89014a250/' // Add actual LinkedIn URL when available
     },
     {
       id: 2,
@@ -23,7 +24,8 @@ function ExecutiveBoard() {
       major: 'Mechanical Engineering',
       year: 'Junior',
       bio: 'My name is Anisha and I am excited to be Co-President of SASE!',
-      image: getPublicImageUrl('anisha.webp')
+      image: getPublicImageUrl('anisha.webp'),
+      linkedin: 'https://www.linkedin.com/in/anisha-kalla-8a4b92274/' // Add actual LinkedIn URL when available
     },
     {
       id: 3,
@@ -32,7 +34,8 @@ function ExecutiveBoard() {
       major: 'Physics',
       year: 'Junior',
       bio: 'I\'m a Physics major. I"m from India, grew up in Dubai, and am trained in ballet!',
-      image: getPublicImageUrl('stef.webp')
+      image: getPublicImageUrl('stef.webp'),
+      linkedin: 'https://www.linkedin.com/in/stefania-miranda/' // Add actual LinkedIn URL when available
     },
     {
       id: 4,
@@ -41,7 +44,8 @@ function ExecutiveBoard() {
       major: 'Electrical Engineering',
       year: 'Sophomore',
       bio: 'My name is Jasmine Cheng, Electrical Engineering major. I\'m a second year student from Fort Collins and I love painting, matcha, and exploring new places!',
-      image: getPublicImageUrl('jasm.webp')
+      image: getPublicImageUrl('jasm.webp'),
+      linkedin: 'https://www.linkedin.com/in/jasmine-cheng1221/' // Add actual LinkedIn URL when available
     },
     {
       id: 5,
@@ -50,7 +54,8 @@ function ExecutiveBoard() {
       major: 'Computer Science',
       year: 'Junior',
       bio: 'Hey I\'m Kyle , a 3rd year Computer Science with a concentration in Software Engineering.',
-      image: getPublicImageUrl('kyle.webp')
+      image: getPublicImageUrl('kyle.webp'),
+      linkedin: 'https://www.linkedin.com/in/kylephamn/' // Add actual LinkedIn URL when available
     },
     {
       id: 6,
@@ -59,7 +64,8 @@ function ExecutiveBoard() {
       major: 'Mechanical Engineering',
       year: 'Sophomore',
       bio: 'Hi I\'m Kai and I\'m a Sophomore in mechanical engineering from Eagan, MN.',
-      image: getPublicImageUrl('kai.webp')
+      image: getPublicImageUrl('kai.webp'),
+      linkedin: 'https://www.linkedin.com/in/kai-meilahn-kinard-a93984282/' // Add actual LinkedIn URL when available
     },
     {
       id: 7,
@@ -68,7 +74,8 @@ function ExecutiveBoard() {
       major: 'Mechanical Engineering',
       year: 'Junior',
       bio: 'My name is Mason Maynell, I\'m a junior mechanical engineering student, and I\'ve caught myself on fire only once.',
-      image: getPublicImageUrl('mason.webp')
+      image: getPublicImageUrl('mason.webp'),
+      linkedin: 'https://www.linkedin.com/in/mason-maynell/' // Add actual LinkedIn URL when available
     }
   ];
 
@@ -97,7 +104,16 @@ function ExecutiveBoard() {
                 }}
               />
               <div className="member-info">
-                <h3>{boardMember.name}</h3>
+                <h3>
+                  {boardMember.name}
+                  {boardMember.linkedin && (
+                    <a href={boardMember.linkedin} target="_blank" rel="noopener noreferrer" className="linkedin-icon" style={{ marginLeft: '8px' }}>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                      </svg>
+                    </a>
+                  )}
+                </h3>
                 <p className="member-position">{boardMember.position}</p>
                 <p className="member-details">{boardMember.major} • {boardMember.year}</p>
                 <p className="member-bio">{boardMember.bio}</p>

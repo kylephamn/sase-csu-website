@@ -12,6 +12,7 @@ const EventCalendar = () => {
   const [events, setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [view, setView] = useState('month');
+  const [date, setDate] = useState(new Date()); // Add state for the current date
   const [filteredCategory, setFilteredCategory] = useState('all');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -109,6 +110,11 @@ const EventCalendar = () => {
     window.open(googleCalendarUrl, '_blank');
   };
   
+  // Handle navigation - NEW FUNCTIONS
+  const handleNavigate = (newDate) => {
+    setDate(newDate);
+  };
+  
   // Categories for filtering
   const categories = [
     { id: 'all', name: 'All Events' },
@@ -200,6 +206,8 @@ const EventCalendar = () => {
           onSelectEvent={handleSelectEvent}
           view={view}
           onView={setView}
+          date={date} // Add current date prop
+          onNavigate={handleNavigate} // Add navigation handler
           views={['month', 'week', 'day', 'agenda']}
         />
       </div>

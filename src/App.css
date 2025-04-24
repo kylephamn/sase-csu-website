@@ -44,6 +44,7 @@ header {
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  width: 100%;
 }
 
 .navbar {
@@ -51,8 +52,12 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0.8rem 2rem;
-  max-width: 1400px;
+  max-width: 100%;
   margin: 0 auto;
+}
+
+.logo {
+  margin-right: 2rem;
 }
 
 .logo a {
@@ -60,12 +65,15 @@ header {
   font-weight: 600;
   color: var(--csu-green);
   letter-spacing: -0.5px;
+  white-space: nowrap;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-left: auto;
 }
 
 .nav-links a {
@@ -73,6 +81,7 @@ header {
   font-weight: 400;
   font-size: 0.9rem;
   transition: var(--transition-standard);
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -418,8 +427,41 @@ main {
   font-size: 0.9rem;
 }
 
+.linkedin-icon {
+  margin-left: 8px;
+  color: #0077b5; /* LinkedIn blue color */
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 1100px) {
+  .nav-links {
+    gap: 1rem;
+  }
+  
+  .navbar {
+    padding: 0.8rem 1rem;
+  }
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .logo {
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-left: 0;
+  }
 
   .subscription-actions {
     flex-direction: column;
