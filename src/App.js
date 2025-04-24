@@ -10,6 +10,7 @@ import Events from './pages/Events';
 import Gallery from './pages/Gallery';
 import ExecutiveBoard from './pages/ExecutiveBoard';
 import Contact from './pages/Contact';
+import Calendar from './pages/Calendar';
 
 function App() {
   return (
@@ -28,7 +29,8 @@ function App() {
               <li><Link to="/gallery">Gallery</Link></li>
               <li><Link to="/executive-board">Executive Board</Link></li>
               <li><Link to="/contact">Contact</Link></li>
-            </ul>
+              <li><Link to="/calendar">Event Calendar</Link></li>
+              </ul>
           </nav>
         </header>
 
@@ -41,6 +43,7 @@ function App() {
             <Route path="/gallery" component={Gallery} />
             <Route path="/executive-board" component={ExecutiveBoard} />
             <Route path="/contact" component={Contact} />
+            <Route path="/calendar" component={Calendar} />
           </Switch>
         </main>
 
