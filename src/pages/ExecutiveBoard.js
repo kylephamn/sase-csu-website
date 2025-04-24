@@ -46,7 +46,7 @@ function ExecutiveBoard() {
     {
       id: 5,
       name: 'Kyle Pham',
-      position: 'Event Coordinator Chair',
+      position: 'Event Coordinator Chair & Webmaster',
       major: 'Computer Science',
       year: 'Junior',
       bio: 'Hey I\'m Kyle , a 3rd year Computer Science with a concentration in Software Engineering.',
