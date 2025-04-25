@@ -176,7 +176,7 @@ function Contact() {
             Groupme
           </a>
 
-          <a href="discord.gg/yBpQT9XQQQ" target="_blank" rel="noopener noreferrer" className="social-link">
+          <a href="https://discord.gg/yBpQT9XQQQ" target="_blank" rel="noopener noreferrer" className="social-link">
           <i class="fa-brands fa-discord"></i> Discord
           </a>
         </div>

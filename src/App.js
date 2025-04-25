@@ -58,7 +58,7 @@ function App() {
               <h3>Connect With Us</h3>
               <ul className="social-links">
                 <li><a href="https://www.instagram.com/csu.sase?igsh=MWNkY29yN3ZzeTk3bA==" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                <li><a href="discord.gg/yBpQT9XQQQ" target="_blank" rel="noopener noreferrer">Discord</a></li>
+                <li><a href="https://discord.gg/yBpQT9XQQQ" target="_blank" rel="noopener noreferrer">Discord</a></li>
                 <li><a href="https://groupme.com/join_group/63382533/ToeT4AEk" target="_blank" rel="noopener noreferrer">GroupMe</a></li>
               </ul>
             </div>
