@@ -175,6 +175,10 @@ function Contact() {
           <a href="https://groupme.com/join_group/63382533/ToeT4AEk" target="_blank" rel="noopener noreferrer" className="social-link">
             Groupme
           </a>
+
+          <a href="discord.gg/yBpQT9XQQQ" target="_blank" rel="noopener noreferrer" className="social-link">
+          <i class="fa-brands fa-discord"></i> Discord
+          </a>
         </div>
       </div>
       
