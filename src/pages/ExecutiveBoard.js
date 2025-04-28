@@ -1,6 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 function ExecutiveBoard() {
+  const { t } = useLanguage();
+  
   // Helper function to get the public URL path
   const getPublicImageUrl = (imageName) => {
     return `${process.env.PUBLIC_URL}/profiles/${imageName}`;
@@ -11,11 +15,11 @@ function ExecutiveBoard() {
       id: 1,
       name: 'Su San Yar Tun',
       position: 'Co-President',
-      major: 'Chemical  Engineering',
+      major: 'Chemical Engineering',
       year: 'Junior',
       bio: 'I\'m a chemical engineering student and my life-long dream is to own a duck, bunny, ferret, and a cat!',
       image: getPublicImageUrl('su.webp'),
-      linkedin: 'https://www.linkedin.com/in/su-san-yar-tun-89014a250/' // Add actual LinkedIn URL when available
+      linkedin: 'https://www.linkedin.com/in/su-san-yar-tun-89014a250/'
     },
     {
       id: 2,
@@ -25,7 +29,7 @@ function ExecutiveBoard() {
       year: 'Junior',
       bio: 'My name is Anisha and I am excited to be Co-President of SASE!',
       image: getPublicImageUrl('anisha.webp'),
-      linkedin: 'https://www.linkedin.com/in/anisha-kalla-8a4b92274/' // Add actual LinkedIn URL when available
+      linkedin: 'https://www.linkedin.com/in/anisha-kalla-8a4b92274/'
     },
     {
       id: 3,
@@ -35,7 +39,7 @@ function ExecutiveBoard() {
       year: 'Junior',
       bio: 'I\'m a Physics major. I"m from India, grew up in Dubai, and am trained in ballet!',
       image: getPublicImageUrl('stef.webp'),
-      linkedin: 'https://www.linkedin.com/in/stefania-miranda/' // Add actual LinkedIn URL when available
+      linkedin: 'https://www.linkedin.com/in/stefania-miranda/'
     },
     {
       id: 4,
@@ -45,7 +49,7 @@ function ExecutiveBoard() {
       year: 'Sophomore',
       bio: 'My name is Jasmine Cheng, Electrical Engineering major. I\'m a second year student from Fort Collins and I love painting, matcha, and exploring new places!',
       image: getPublicImageUrl('jasm.webp'),
-      linkedin: 'https://www.linkedin.com/in/jasmine-cheng1221/' // Add actual LinkedIn URL when available
+      linkedin: 'https://www.linkedin.com/in/jasmine-cheng1221/'
     },
     {
       id: 5,
@@ -55,7 +59,7 @@ function ExecutiveBoard() {
       year: 'Junior',
       bio: 'Hey I\'m Kyle , a 3rd year Computer Science with a concentration in Software Engineering.',
       image: getPublicImageUrl('kyle.webp'),
-      linkedin: 'https://www.linkedin.com/in/kylephamn/' // Add actual LinkedIn URL when available
+      linkedin: 'https://www.linkedin.com/in/kylephamn/'
     },
     {
       id: 6,
@@ -65,7 +69,7 @@ function ExecutiveBoard() {
       year: 'Sophomore',
       bio: 'Hi I\'m Kai and I\'m a Sophomore in mechanical engineering from Eagan, MN.',
       image: getPublicImageUrl('kai.webp'),
-      linkedin: 'https://www.linkedin.com/in/kai-meilahn-kinard-a93984282/' // Add actual LinkedIn URL when available
+      linkedin: 'https://www.linkedin.com/in/kai-meilahn-kinard-a93984282/'
     },
     {
       id: 7,
@@ -75,7 +79,7 @@ function ExecutiveBoard() {
       year: 'Junior',
       bio: 'My name is Mason Maynell, I\'m a junior mechanical engineering student, and I\'ve caught myself on fire only once.',
       image: getPublicImageUrl('mason.webp'),
-      linkedin: 'https://www.linkedin.com/in/mason-maynell/' // Add actual LinkedIn URL when available
+      linkedin: 'https://www.linkedin.com/in/mason-maynell/'
     }
   ];
 
@@ -83,13 +87,13 @@ function ExecutiveBoard() {
     <div className="executive-board-page">
       <div className="hero">
         <div className="content">
-          <h1>Executive Board</h1>
-          <p>Meet the dedicated team of students who lead SASE CSU</p>
+          <h1>{t('executiveBoard.hero.title')}</h1>
+          <p>{t('executiveBoard.hero.description')}</p>
         </div>
       </div>
       
       <div className="section">
-        <p className="board-intro">Our executive board works tirelessly to create valuable opportunities for our members and build a supportive community. Feel free to reach out to any of our board members if you have questions or ideas!</p>
+        <p className="board-intro">{t('executiveBoard.intro')}</p>
         
         <div className="board-grid">
           {boardMembers.map(boardMember => (
@@ -124,10 +128,10 @@ function ExecutiveBoard() {
       </div>
       
       <div className="section">
-        <h2 className="section-title">Join the Executive Board</h2>
-        <p>Interested in joining our leadership team? Elections for the upcoming academic year are held each spring semester. Keep an eye out for announcements about available positions and the application process.</p>
-        <p>Being part of the executive board is a great way to develop leadership skills, make an impact on the community, and build your resume!</p>
-        <a href="/#/contact" className="btn">Learn More About Leadership Opportunities</a>
+        <h2 className="section-title">{t('executiveBoard.join.title')}</h2>
+        <p>{t('executiveBoard.join.paragraph1')}</p>
+        <p>{t('executiveBoard.join.paragraph2')}</p>
+        <Link to="/contact" className="btn">{t('executiveBoard.join.cta')}</Link>
       </div>
     </div>
   );

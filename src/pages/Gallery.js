@@ -1,6 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 function Gallery() {
+  const { t } = useLanguage();
+  
   // Helper function to get the public URL path
   const getPublicImageUrl = (imageName) => {
     return `${process.env.PUBLIC_URL}/images/${imageName}`;
@@ -43,13 +47,13 @@ function Gallery() {
     <div className="gallery-page">
       <div className="hero">
         <div className="content">
-          <h1>Photo Gallery</h1>
-          <p>Explore our events and activities through these photos</p>
+          <h1>{t('gallery.hero.title')}</h1>
+          <p>{t('gallery.hero.description')}</p>
         </div>
       </div>
       
       <div className="section">
-        <p className="gallery-intro">Get a glimpse of what it's like to be part of SASE CSU! Browse through photos from our past events, workshops, conferences, and social gatherings.</p>
+        <p className="gallery-intro">{t('gallery.intro')}</p>
         
         <div className="gallery-grid">
           {images.map(image => (
@@ -73,9 +77,9 @@ function Gallery() {
       </div>
       
       <div className="section">
-        <h2 className="section-title">Share Your Photos</h2>
-        <p>Have photos from our events that you'd like to share? Send them to us and we'll add them to our gallery!</p>
-        <a href="/#/contact" className="btn">Submit Photos</a>
+        <h2 className="section-title">{t('gallery.share.title')}</h2>
+        <p>{t('gallery.share.description')}</p>
+        <Link to="/contact" className="btn">{t('gallery.share.cta')}</Link>
       </div>
     </div>
   );

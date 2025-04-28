@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 const CountdownTimer = ({ targetDate }) => {
+  const { t } = useLanguage();
+  
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
