@@ -61,10 +61,10 @@ export const languages = {
     nativeName: 'Bahasa Indonesia',
     dir: 'ltr'
   },
-  fil: { 
-    code: 'fil', 
-    name: 'Filipino', 
-    nativeName: 'Filipino',
+  tg: { 
+    code: 'tg', 
+    name: 'Tagalog', 
+    nativeName: 'Tagalog',
     dir: 'ltr'
   },
   fr: {
@@ -79,30 +79,12 @@ export const languages = {
     nativeName: 'Español',
     dir: 'ltr'
   },
-  de: {
-    code: 'de',
-    name: 'German',
-    nativeName: 'Deutsch',
-    dir: 'ltr'
-  },
   ar: {
     code: 'ar',
     name: 'Arabic',
     nativeName: 'العربية',
     dir: 'rtl' // right-to-left text direction
   },
-  ru: {
-    code: 'ru',
-    name: 'Russian',
-    nativeName: 'Русский',
-    dir: 'ltr'
-  },
-  pt: {
-    code: 'pt',
-    name: 'Portuguese',
-    nativeName: 'Português',
-    dir: 'ltr'
-  }
 };
 
 // Store and retrieve the language preference key
@@ -110,7 +92,7 @@ const LANGUAGE_PREFERENCE_KEY = 'sase_csu_language_preference';
 
 // Provider component
 export const LanguageProvider = ({ children }) => {
-  // Improved function to get initial language with proper fallbacks
+  // Function to get initial language with fallbacks
   const getInitialLanguage = () => {
     try {
       // Get stored language preference
@@ -154,20 +136,19 @@ export const LanguageProvider = ({ children }) => {
   useEffect(() => {
     document.documentElement.lang = currentLanguage;
     document.documentElement.dir = languages[currentLanguage]?.dir || 'ltr';
-  }, [currentLanguage]); // Fixed: Added currentLanguage as dependency
+  }, [currentLanguage]);
 
-  // Load priority translations first, then full translations
+  // Load translations when language changes
   useEffect(() => {
     const loadTranslations = async () => {
       setIsLoading(true);
       setError(null);
-      setIsFullyLoaded(false);
       
       try {
-        // First load priority translations for immediate UI feedback
-        const priorityTranslations = await translationService.getTranslations(currentLanguage, true);
-        setTranslations(priorityTranslations);
-        setIsLoading(false);
+        // Load translations from local files
+        const loadedTranslations = await translationService.getTranslations(currentLanguage);
+        setTranslations(loadedTranslations);
+        setIsFullyLoaded(true);
         
         // Save language preference
         saveLanguagePreference(currentLanguage);
@@ -175,18 +156,6 @@ export const LanguageProvider = ({ children }) => {
         // Set document language and direction
         document.documentElement.lang = currentLanguage;
         document.documentElement.dir = languages[currentLanguage]?.dir || 'ltr';
-        
-        // Then load full translations asynchronously
-        setTimeout(async () => {
-          try {
-            const fullTranslations = await translationService.getTranslations(currentLanguage, false);
-            setTranslations(fullTranslations);
-            setIsFullyLoaded(true);
-          } catch (err) {
-            console.error('Failed to load complete translations:', err);
-            // We already have priority translations, so no need to show error
-          }
-        }, 100); // Small delay to ensure UI renders first
       } catch (error) {
         console.error(`Failed to load translations for ${currentLanguage}:`, error);
         setError(`Failed to load translations for ${languages[currentLanguage]?.name || currentLanguage}. Using English instead.`);
@@ -200,7 +169,7 @@ export const LanguageProvider = ({ children }) => {
             console.error('Failed to load even English translations:', fallbackError);
           }
         }
-        
+      } finally {
         setIsLoading(false);
       }
     };
@@ -208,7 +177,7 @@ export const LanguageProvider = ({ children }) => {
     loadTranslations();
   }, [currentLanguage]);
 
-  // Enhanced change language function with persistence
+  // Change language function with persistence
   const changeLanguage = (langCode) => {
     if (languages[langCode]) {
       // Set the new language
@@ -216,8 +185,6 @@ export const LanguageProvider = ({ children }) => {
       
       // Save preference to localStorage
       saveLanguagePreference(langCode);
-      
-      // HTML attributes are now handled by the useEffect with [currentLanguage] dependency
     } else {
       console.error(`Language code "${langCode}" is not supported.`);
     }

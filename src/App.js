@@ -7,7 +7,6 @@ import { LanguageProvider, useLanguage } from './context/LanguageContext';
 
 // Import components
 import LanguageSelector from './components/LanguageSelector';
-import LanguageLoadingIndicator from './components/LanguageLoadingIndicator';
 import './components/LanguageSelector.css';
 
 // Import pages
@@ -27,7 +26,6 @@ const AppContent = () => {
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
-        <LanguageLoadingIndicator />
         <header>
           <nav className="navbar">
             <div className="logo">
