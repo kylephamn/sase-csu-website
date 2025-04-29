@@ -1,5 +1,6 @@
 // src/context/LanguageContext.js
 import React, { createContext, useState, useEffect, useContext } from 'react';
+import translationService from '../components/TranslationService';
 
 // Create the language context
 const LanguageContext = createContext();
@@ -65,50 +66,141 @@ export const languages = {
     name: 'Filipino', 
     nativeName: 'Filipino',
     dir: 'ltr'
+  },
+  fr: {
+    code: 'fr',
+    name: 'French',
+    nativeName: 'Français',
+    dir: 'ltr'
+  },
+  es: {
+    code: 'es',
+    name: 'Spanish',
+    nativeName: 'Español',
+    dir: 'ltr'
+  },
+  de: {
+    code: 'de',
+    name: 'German',
+    nativeName: 'Deutsch',
+    dir: 'ltr'
+  },
+  ar: {
+    code: 'ar',
+    name: 'Arabic',
+    nativeName: 'العربية',
+    dir: 'rtl' // right-to-left text direction
+  },
+  ru: {
+    code: 'ru',
+    name: 'Russian',
+    nativeName: 'Русский',
+    dir: 'ltr'
+  },
+  pt: {
+    code: 'pt',
+    name: 'Portuguese',
+    nativeName: 'Português',
+    dir: 'ltr'
   }
 };
 
+// Store and retrieve the language preference key
+const LANGUAGE_PREFERENCE_KEY = 'sase_csu_language_preference';
+
 // Provider component
 export const LanguageProvider = ({ children }) => {
-  // Get stored language preference or default to browser language or English
-  const getBrowserLanguage = () => {
-    const browserLang = navigator.language.split('-')[0];
-    return languages[browserLang] ? browserLang : 'en';
+  // Improved function to get initial language with proper fallbacks
+  const getInitialLanguage = () => {
+    try {
+      // Get stored language preference
+      const storedLanguage = localStorage.getItem(LANGUAGE_PREFERENCE_KEY);
+      
+      // If it exists and is a supported language, use it
+      if (storedLanguage && languages[storedLanguage]) {
+        console.log(`Using stored language preference: ${storedLanguage}`);
+        return storedLanguage;
+      }
+      
+      // Otherwise, use browser language or default to English
+      const browserLang = navigator.language.split('-')[0];
+      const defaultLang = languages[browserLang] ? browserLang : 'en';
+      console.log(`No stored preference, using ${defaultLang} based on browser`);
+      return defaultLang;
+    } catch (e) {
+      // In case of any localStorage errors, default to English
+      console.warn('Error accessing language preferences', e);
+      return 'en';
+    }
   };
 
-  const getInitialLanguage = () => {
-    const storedLanguage = localStorage.getItem('preferredLanguage');
-    return storedLanguage || getBrowserLanguage();
+  // Save language preference to localStorage
+  const saveLanguagePreference = (langCode) => {
+    try {
+      localStorage.setItem(LANGUAGE_PREFERENCE_KEY, langCode);
+      console.log(`Language preference saved: ${langCode}`);
+    } catch (e) {
+      console.warn('Could not save language preference', e);
+    }
   };
 
   const [currentLanguage, setCurrentLanguage] = useState(getInitialLanguage());
   const [translations, setTranslations] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [isFullyLoaded, setIsFullyLoaded] = useState(false);
 
-  // Load translations for the current language
+  // Set HTML language and direction attributes on first load
+  useEffect(() => {
+    document.documentElement.lang = currentLanguage;
+    document.documentElement.dir = languages[currentLanguage]?.dir || 'ltr';
+  }, [currentLanguage]); // Fixed: Added currentLanguage as dependency
+
+  // Load priority translations first, then full translations
   useEffect(() => {
     const loadTranslations = async () => {
       setIsLoading(true);
+      setError(null);
+      setIsFullyLoaded(false);
+      
       try {
-        // Dynamic import for the translations
-        const translationModule = await import(`../translations/${currentLanguage}.js`);
-        setTranslations(translationModule.default);
+        // First load priority translations for immediate UI feedback
+        const priorityTranslations = await translationService.getTranslations(currentLanguage, true);
+        setTranslations(priorityTranslations);
+        setIsLoading(false);
         
         // Save language preference
-        localStorage.setItem('preferredLanguage', currentLanguage);
+        saveLanguagePreference(currentLanguage);
         
         // Set document language and direction
         document.documentElement.lang = currentLanguage;
-        document.documentElement.dir = languages[currentLanguage].dir;
+        document.documentElement.dir = languages[currentLanguage]?.dir || 'ltr';
         
+        // Then load full translations asynchronously
+        setTimeout(async () => {
+          try {
+            const fullTranslations = await translationService.getTranslations(currentLanguage, false);
+            setTranslations(fullTranslations);
+            setIsFullyLoaded(true);
+          } catch (err) {
+            console.error('Failed to load complete translations:', err);
+            // We already have priority translations, so no need to show error
+          }
+        }, 100); // Small delay to ensure UI renders first
       } catch (error) {
         console.error(`Failed to load translations for ${currentLanguage}:`, error);
+        setError(`Failed to load translations for ${languages[currentLanguage]?.name || currentLanguage}. Using English instead.`);
+        
         // Fallback to English if translations fail to load
         if (currentLanguage !== 'en') {
-          const enModule = await import('../translations/en.js');
-          setTranslations(enModule.default);
+          try {
+            const enTranslations = await translationService.getTranslations('en');
+            setTranslations(enTranslations);
+          } catch (fallbackError) {
+            console.error('Failed to load even English translations:', fallbackError);
+          }
         }
-      } finally {
+        
         setIsLoading(false);
       }
     };
@@ -116,10 +208,18 @@ export const LanguageProvider = ({ children }) => {
     loadTranslations();
   }, [currentLanguage]);
 
-  // Change language function
+  // Enhanced change language function with persistence
   const changeLanguage = (langCode) => {
     if (languages[langCode]) {
+      // Set the new language
       setCurrentLanguage(langCode);
+      
+      // Save preference to localStorage
+      saveLanguagePreference(langCode);
+      
+      // HTML attributes are now handled by the useEffect with [currentLanguage] dependency
+    } else {
+      console.error(`Language code "${langCode}" is not supported.`);
     }
   };
 
@@ -154,7 +254,9 @@ export const LanguageProvider = ({ children }) => {
         languages, 
         changeLanguage, 
         t,
-        isLoading
+        isLoading,
+        isFullyLoaded,
+        error
       }}
     >
       {children}
