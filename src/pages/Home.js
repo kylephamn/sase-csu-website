@@ -25,10 +25,10 @@ function Home() {
       <div className="section">
         <h2 className="section-title">{t('home.upcomingEvent.title')}</h2>
         <div className="event-card">
-          <h3>Executive Board Election Night </h3>
-          <p className="event-date">April 24, 2025 • 6:00 PM - 7:00 PM</p>
-          <p className="event-location">Lory Student Center, Room 306</p>
-          <p>Join us for our Executive Board Election Night, where you'll have the opportunity to vote for your 2025-2026 executive board.</p>
+          <h3>SASE Boba Night </h3>
+          <p className="event-date">November 4, 2025 • 6:00 PM - 7:00 PM</p>
+          <p className="event-location">Lory Student Center -> Ding Tea</p>
+          <p>Join us for our Boba Night, where you'll get free boba and get to network with your executive board and peers!</p>
           <Link to="/events" className="btn">{t('home.upcomingEvent.learnMore')}</Link>
         </div>
       </div>

@@ -37,7 +37,7 @@ const translations = {
         title: "Get Involved",
         description: "There are many ways to get involved with SASE CSU:",
         ways: {
-          meetings: "Attend our regular meetings every Thursday",
+          meetings: "Attend our regular meetings every Monday",
           workshops: "Participate in professional development workshops", 
           volunteer: "Volunteer for community outreach events",
           leadership: "Apply for leadership positions"
@@ -109,7 +109,7 @@ const translations = {
       },
       regular: {
         title: "Regular Meetings",
-        paragraph1: "Our general body meetings are held every Thursday from 6:00 PM to 7:00 PM in the Lory Student Center, Room 333.",
+        paragraph1: "Our general body meetings are held every other Monday from 6:00 PM to 7:00 PM in the Lory Student Center, Room 390.",
         paragraph2: "All students are welcome to attend, whether you're a member or just interested in learning more about SASE."
       },
       schedule: {
@@ -164,7 +164,7 @@ const translations = {
         description: "Have questions about SASE CSU? Want to join our organization or partner with us? We'd love to hear from you!",
         email: "Email",
         office: "Office",
-        officeHours: "Office Hours: Thursdays, 6:00 PM - 7:00 PM",
+        officeHours: "Office Hours: Mondays, 6:00 PM - 7:00 PM",
         mailingAddress: "Mailing Address"
       },
       connect: {
