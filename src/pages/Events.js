@@ -18,7 +18,7 @@ function Events() {
       </div>
       
       <div className="section featured-event">
-        <h2 className="section-title">Executive Board Election Night</h2>
+        <h2 className="section-title">SASE Boba Night</h2>
         <div className="event-details">
           <div className="event-info">
             <p><strong>{t('common.date')}:</strong> November 4, 2025</p>
