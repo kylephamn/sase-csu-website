@@ -13,53 +13,53 @@ function ExecutiveBoard() {
   const boardMembers = [
     {
       id: 1,
-      name: 'Su San Yar Tun',
-      position: 'Co-President',
-      major: 'Chemical Engineering',
-      year: 'Junior',
-      bio: 'I\'m a chemical engineering student and my life-long dream is to own a duck, bunny, ferret, and a cat!',
-      image: getPublicImageUrl('su.webp'),
-      linkedin: 'https://www.linkedin.com/in/su-san-yar-tun-89014a250/'
+      name: 'Kyle Pham',
+      position: 'Co-President & Webmaster',
+      major: 'Computer Science: Software Engineering',
+      year: 'Senior',
+      bio: 'I am on the USLI team and will be joining Lockheed Martin Space full-time, once I graduate.',
+      image: getPublicImageUrl('kyle.webp'),
+      linkedin: 'https://www.linkedin.com/in/kylephamn/'
     },
     {
       id: 2,
-      name: 'Anisha Kalla',
+      name: 'Aedyn Simon',
       position: 'Co-President',
-      major: 'Mechanical Engineering',
-      year: 'Junior',
-      bio: 'My name is Anisha and I am excited to be Co-President of SASE!',
-      image: getPublicImageUrl('anisha.webp'),
-      linkedin: 'https://www.linkedin.com/in/anisha-kalla-8a4b92274/'
+      major: 'Computer Science',
+      year: 'Senior',
+      bio: 'I play drums for the CSU jazz bands as well as for my personal funk and punk/rock bands.',
+      image: getPublicImageUrl('aedyn.webp'),
+      linkedin: 'https://www.linkedin.com/in/aedynsimon/'
     },
     {
       id: 3,
-      name: 'Stefania Miranda',
-      position: 'Finance Chair',
-      major: 'Physics',
-      year: 'Junior',
-      bio: 'I\'m a Physics major. I"m from India, grew up in Dubai, and am trained in ballet!',
-      image: getPublicImageUrl('stef.webp'),
-      linkedin: 'https://www.linkedin.com/in/stefania-miranda/'
+      name: 'Isa Fontana',
+      position: 'Vice President',
+      major: 'Computer Engineering: Aerospace Systems',
+      year: 'Senior',
+      bio: 'I dance and I run a TEDx program! Worked on rockets the past two summers!',
+      image: getPublicImageUrl('isa.webp'),
+      linkedin: 'https://www.linkedin.com/in/isafontana/'
     },
     {
       id: 4,
-      name: 'Jasmine Cheng',
+      name: 'Lilianna Nono',
       position: 'Fundraising Chair',
       major: 'Electrical Engineering',
       year: 'Sophomore',
-      bio: 'My name is Jasmine Cheng, Electrical Engineering major. I\'m a second year student from Fort Collins and I love painting, matcha, and exploring new places!',
-      image: getPublicImageUrl('jasm.webp'),
-      linkedin: 'https://www.linkedin.com/in/jasmine-cheng1221/'
+      bio: 'I like food and I LOVE SHOPPING. I travel A LOT!!',
+      image: getPublicImageUrl('lilianna.webp'),
+      linkedin: 'https://www.linkedin.com/in/lilianna-nono-9ab500325/'
     },
     {
       id: 5,
-      name: 'Kyle Pham',
-      position: 'Event Coordinator Chair & Webmaster',
-      major: 'Computer Science',
+      name: 'Daniel Ontai',
+      position: 'Event Coordinator Chair',
+      major: 'Data Science',
       year: 'Junior',
-      bio: 'Hey I\'m Kyle , a 3rd year Computer Science with a concentration in Software Engineering.',
-      image: getPublicImageUrl('kyle.webp'),
-      linkedin: 'https://www.linkedin.com/in/kylephamn/'
+      bio: 'According to Lilianna, “I am a big back”.',
+      image: getPublicImageUrl('daniel.webp'),
+      linkedin: 'https://www.linkedin.com/in/danielontai//'
     },
     {
       id: 6,
@@ -67,19 +67,9 @@ function ExecutiveBoard() {
       position: 'Marketing Chair',
       major: 'Mechanical Engineering',
       year: 'Sophomore',
-      bio: 'Hi I\'m Kai and I\'m a Sophomore in mechanical engineering from Eagan, MN.',
-      image: getPublicImageUrl('kai.webp'),
-      linkedin: 'https://www.linkedin.com/in/kai-meilahn-kinard-a93984282/'
-    },
-    {
-      id: 7,
-      name: 'Mason Maynell',
-      position: 'Conference Chair',
-      major: 'Mechanical Engineering',
-      year: 'Junior',
-      bio: 'My name is Mason Maynell, I\'m a junior mechanical engineering student, and I\'ve caught myself on fire only once.',
-      image: getPublicImageUrl('mason.webp'),
-      linkedin: 'https://www.linkedin.com/in/mason-maynell/'
+      bio: 'I enjoy shopping/thrifting, makeup, going to boba shops, baking desserts, and listening to music/ going to shows! I\'ve been a big fan of Sanrio since I was 6!.',
+      image: getPublicImageUrl('lena.webp'),
+      linkedin: 'https://www.linkedin.com/in/lena-lai-729602240/'
     }
   ];
 
