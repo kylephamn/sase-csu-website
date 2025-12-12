@@ -1,10 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../context/LanguageContext';
 
 function Gallery() {
-  const { t } = useLanguage();
-  
   // Helper function to get the public URL path
   const getPublicImageUrl = (imageName) => {
     return `${process.env.PUBLIC_URL}/images/${imageName}`;
@@ -47,21 +44,21 @@ function Gallery() {
     <div className="gallery-page">
       <div className="hero">
         <div className="content">
-          <h1>{t('gallery.hero.title')}</h1>
-          <p>{t('gallery.hero.description')}</p>
+          <h1>Photo Gallery</h1>
+          <p>Explore our events and activities through these photos</p>
         </div>
       </div>
-      
+
       <div className="section">
-        <p className="gallery-intro">{t('gallery.intro')}</p>
-        
+        <p className="gallery-intro">Get a glimpse of what it's like to be part of SASE CSU! Browse through photos from our past events, workshops, conferences, and social gatherings.</p>
+
         <div className="gallery-grid">
           {images.map(image => (
             <div key={image.id} className="gallery-item">
-              <img 
-                src={image.src} 
-                alt={image.title} 
-                className="gallery-image" 
+              <img
+                src={image.src}
+                alt={image.title}
+                className="gallery-image"
                 onError={(e) => {
                   console.log("Image failed to load:", image.title);
                   e.target.src = "https://placehold.co/400x300/f5f5f7/1d1d1f?text=SASE+CSU";
@@ -75,11 +72,11 @@ function Gallery() {
           ))}
         </div>
       </div>
-      
+
       <div className="section">
-        <h2 className="section-title">{t('gallery.share.title')}</h2>
-        <p>{t('gallery.share.description')}</p>
-        <Link to="/contact" className="btn">{t('gallery.share.cta')}</Link>
+        <h2 className="section-title">Share Your Photos</h2>
+        <p>Have photos from our events that you'd like to share? Send them to us and we'll add them to our gallery!</p>
+        <Link to="/contact" className="btn">Submit Photos</Link>
       </div>
     </div>
   );

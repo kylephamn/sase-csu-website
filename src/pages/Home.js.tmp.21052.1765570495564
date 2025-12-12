@@ -25,7 +25,7 @@ function Home() {
         <div className="event-card">
           <h3>SASE Boba Night </h3>
           <p className="event-date">November 4, 2025 • 6:00 PM - 7:00 PM</p>
-          <p className="event-location">Lory Student Center -{'>'} Ding Tea</p>
+          <p className="event-location">Lory Student Center -> Ding Tea</p>
           <p>Join us for our Boba Night, where you'll get free boba and get to network with your executive board and peers!</p>
           <Link to="/events" className="btn">Learn More</Link>
         </div>

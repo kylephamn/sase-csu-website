@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../context/LanguageContext';
 
 function ExecutiveBoard() {
-  const { t } = useLanguage();
-  
+  const [showInterns, setShowInterns] = useState(false);
+
   // Helper function to get the public URL path
   const getPublicImageUrl = (imageName) => {
     return `${process.env.PUBLIC_URL}/profiles/${imageName}`;
@@ -57,41 +56,114 @@ function ExecutiveBoard() {
       position: 'Event Coordinator Chair',
       major: 'Data Science',
       year: 'Junior',
-      bio: 'According to Lilianna, “I am a big back”.',
+      bio: 'According to Lilianna, "I am a big back".',
       image: getPublicImageUrl('daniel.webp'),
       linkedin: 'https://www.linkedin.com/in/danielontai//'
     },
     {
       id: 6,
-      name: 'Kai Meilahn-Kinard',
+      name: 'Lena Lai',
       position: 'Marketing Chair',
-      major: 'Mechanical Engineering',
-      year: 'Sophomore',
+      major: 'Biomedical Sciences',
+      year: 'Senior',
       bio: 'I enjoy shopping/thrifting, makeup, going to boba shops, baking desserts, and listening to music/ going to shows! I\'ve been a big fan of Sanrio since I was 6!.',
       image: getPublicImageUrl('lena.webp'),
       linkedin: 'https://www.linkedin.com/in/lena-lai-729602240/'
     }
   ];
 
+  const internMembers = [
+    {
+      id: 1,
+      name: 'Intern 1',
+      position: 'Executive Board Intern',
+      major: 'TBD',
+      year: 'TBD',
+      bio: 'Join our team!',
+      image: 'https://placehold.co/300x300/f5f5f7/1d1d1f?text=SASE+Intern',
+      linkedin: ''
+    },
+    {
+      id: 2,
+      name: 'Intern 2',
+      position: 'Executive Board Intern',
+      major: 'TBD',
+      year: 'TBD',
+      bio: 'Join our team!',
+      image: 'https://placehold.co/300x300/f5f5f7/1d1d1f?text=SASE+Intern',
+      linkedin: ''
+    },
+    {
+      id: 3,
+      name: 'Intern 3',
+      position: 'Executive Board Intern',
+      major: 'TBD',
+      year: 'TBD',
+      bio: 'Join our team!',
+      image: 'https://placehold.co/300x300/f5f5f7/1d1d1f?text=SASE+Intern',
+      linkedin: ''
+    },
+    {
+      id: 4,
+      name: 'Intern 4',
+      position: 'Executive Board Intern',
+      major: 'TBD',
+      year: 'TBD',
+      bio: 'Join our team!',
+      image: 'https://placehold.co/300x300/f5f5f7/1d1d1f?text=SASE+Intern',
+      linkedin: ''
+    },
+    {
+      id: 5,
+      name: 'Intern 5',
+      position: 'Executive Board Intern',
+      major: 'TBD',
+      year: 'TBD',
+      bio: 'Join our team!',
+      image: 'https://placehold.co/300x300/f5f5f7/1d1d1f?text=SASE+Intern',
+      linkedin: ''
+    },
+    {
+      id: 6,
+      name: 'Intern 6',
+      position: 'Executive Board Intern',
+      major: 'TBD',
+      year: 'TBD',
+      bio: 'Join our team!',
+      image: 'https://placehold.co/300x300/f5f5f7/1d1d1f?text=SASE+Intern',
+      linkedin: ''
+    }
+  ];
+
+  const currentMembers = showInterns ? internMembers : boardMembers;
+
   return (
     <div className="executive-board-page">
       <div className="hero">
         <div className="content">
-          <h1>{t('executiveBoard.hero.title')}</h1>
-          <p>{t('executiveBoard.hero.description')}</p>
+          <h1>{showInterns ? 'Executive Board Interns' : 'Executive Board'}</h1>
+          <p>Meet the dedicated team of students who lead SASE CSU</p>
+
+          <div className="toggle-container">
+            <span className={!showInterns ? 'toggle-label active' : 'toggle-label'}>Board</span>
+            <div className="toggle-switch" onClick={() => setShowInterns(!showInterns)}>
+              <div className={`toggle-slider ${showInterns ? 'active' : ''}`}></div>
+            </div>
+            <span className={showInterns ? 'toggle-label active' : 'toggle-label'}>Interns</span>
+          </div>
         </div>
       </div>
-      
+
       <div className="section">
-        <p className="board-intro">{t('executiveBoard.intro')}</p>
-        
+        <p className="board-intro">Our executive board works tirelessly to create valuable opportunities for our members and build a supportive community. Feel free to reach out to any of our board members if you have questions or ideas!</p>
+
         <div className="board-grid">
-          {boardMembers.map(boardMember => (
+          {currentMembers.map(boardMember => (
             <div key={boardMember.id} className="board-member">
-              <img 
-                src={boardMember.image} 
-                alt={boardMember.name} 
-                className="member-image" 
+              <img
+                src={boardMember.image}
+                alt={boardMember.name}
+                className="member-image"
                 onError={(e) => {
                   console.log("Image failed to load:", boardMember.name);
                   e.target.src = "https://placehold.co/300x300/f5f5f7/1d1d1f?text=SASE+Member";
@@ -116,12 +188,12 @@ function ExecutiveBoard() {
           ))}
         </div>
       </div>
-      
+
       <div className="section">
-        <h2 className="section-title">{t('executiveBoard.join.title')}</h2>
-        <p>{t('executiveBoard.join.paragraph1')}</p>
-        <p>{t('executiveBoard.join.paragraph2')}</p>
-        <Link to="/contact" className="btn">{t('executiveBoard.join.cta')}</Link>
+        <h2 className="section-title">Join the Executive Board</h2>
+        <p>Interested in joining our leadership team? Elections for the upcoming academic year are held each spring semester. Keep an eye out for announcements about available positions and the application process.</p>
+        <p>Being part of the executive board is a great way to develop leadership skills, make an impact on the community, and build your resume!</p>
+        <Link to="/contact" className="btn">Learn More About Leadership Opportunities</Link>
       </div>
     </div>
   );

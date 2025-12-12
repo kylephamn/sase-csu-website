@@ -1,18 +1,60 @@
 [
-    {
-      "id": 1,
-      "title": "Executive Board Election Night",
-      "start": "2025-04-24T18:00:00",
-      "end": "2025-04-24T19:00:00",
-      "location": "Lory Student Center, Room 306",
-      "description": "Join us for our Executive Board Election Night, where you'll have the opportunity to vote for your 2025-2026 executive board. This is an important event for shaping the future leadership of our chapter.",
-      "category": "leadership",
-      "organizer": "SASE CSU Executive Board",
-      "isRecurring": false,
-      "rsvpRequired": true,
-      "capacity": 50,
-      "attendees": 0,
-      "isFeatured": true,
-      "tags": []
-    }
-  ]
+  {
+    "id": 1,
+    "title": "SASE Boba Night",
+    "start": "2025-11-04T18:00:00",
+    "end": "2025-11-04T19:00:00",
+    "location": "Lory Student Center -> Ding Tea",
+    "description": "Join the SASE E-Board at Ding Tea for free boba and to socialize and network with us and your peers!",
+    "category": "social",
+    "organizer": "SASE CSU Executive Board",
+    "isRecurring": false,
+    "rsvpRequired": false,
+    "isFeatured": true,
+    "tags": ["boba", "networking", "social"]
+  },
+  {
+    "id": 2,
+    "title": "SASE Team Challenges",
+    "start": "2025-11-17T18:00:00",
+    "end": "2025-11-17T19:00:00",
+    "location": "Lory Student Center, Room 390",
+    "description": "Join the SASE E-Board to compete against your peers in a variety of challenges. Winning team receives a prize!",
+    "category": "social",
+    "organizer": "SASE CSU Executive Board",
+    "isRecurring": false,
+    "rsvpRequired": false,
+    "isFeatured": false,
+    "tags": ["competition", "team-building", "prizes"]
+  },
+  {
+    "id": 3,
+    "title": "SASE Hot Chocolate Studying",
+    "start": "2025-12-01T18:00:00",
+    "end": "2025-12-01T20:00:00",
+    "location": "Lory Student Center, Room 390",
+    "description": "Join the SASE E-Board to have some hot chocolate and snacks as we prepare for finals!",
+    "category": "academic",
+    "organizer": "SASE CSU Executive Board",
+    "isRecurring": false,
+    "rsvpRequired": false,
+    "isFeatured": false,
+    "tags": ["studying", "finals", "support"]
+  },
+  {
+    "id": 4,
+    "title": "Executive Board Election Night",
+    "start": "2025-04-24T18:00:00",
+    "end": "2025-04-24T19:00:00",
+    "location": "Lory Student Center, Room 306",
+    "description": "Join us for our Executive Board Election Night, where you'll have the opportunity to vote for your 2025-2026 executive board. This is an important event for shaping the future leadership of our chapter.",
+    "category": "leadership",
+    "organizer": "SASE CSU Executive Board",
+    "isRecurring": false,
+    "rsvpRequired": true,
+    "capacity": 50,
+    "attendees": 0,
+    "isFeatured": false,
+    "tags": ["elections", "voting", "leadership"]
+  }
+]
