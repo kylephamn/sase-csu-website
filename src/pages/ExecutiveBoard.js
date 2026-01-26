@@ -69,68 +69,78 @@ function ExecutiveBoard() {
       bio: 'I enjoy shopping/thrifting, makeup, going to boba shops, baking desserts, and listening to music/ going to shows! I\'ve been a big fan of Sanrio since I was 6!.',
       image: getPublicImageUrl('lena.webp'),
       linkedin: 'https://www.linkedin.com/in/lena-lai-729602240/'
+    },
+    {
+      id: 7,
+      name: 'Joshua Masih',
+      position: 'Finance Chair',
+      major: 'Computer Science',
+      year: 'Senior',
+      bio: 'I\'m really into fashion, football (real football) (Visca el Barça),  playing guitar, and I\'m a big Supernatural fan.',
+      image: getPublicImageUrl('Joshua.webp'),
+      linkedin: 'https://www.linkedin.com/in/joshua-masih/'
     }
   ];
 
   const internMembers = [
     {
       id: 1,
-      name: 'Intern 1',
-      position: 'Executive Board Intern',
-      major: 'TBD',
-      year: 'TBD',
-      bio: 'Join our team!',
-      image: 'https://placehold.co/300x300/f5f5f7/1d1d1f?text=SASE+Intern',
+      name: 'Ti Mo',
+      position: 'Co-President Intern',
+      major: 'Mechanical Engineering with Aerospace Concentration ',
+      year: 'Freshman',
+      bio: 'A little about myself is I’m from Thailand, I’ve been living in Colorado for 15 years and I love Colorado. I like going out to eat a lot.',
+      image: getPublicImageUrl('intern/TiMo.webp'),
       linkedin: ''
     },
     {
       id: 2,
-      name: 'Intern 2',
-      position: 'Executive Board Intern',
-      major: 'TBD',
-      year: 'TBD',
-      bio: 'Join our team!',
-      image: 'https://placehold.co/300x300/f5f5f7/1d1d1f?text=SASE+Intern',
-      linkedin: ''
+      name: 'Mi Meh',
+      position: 'Co-President Intern',
+      major: 'Mechanical Engineering with Aerospace Concentration ',
+      year: 'Freshman',
+      bio: 'I do photography, I like to hang out with friends/family, I like to play tennis, and I have two cats named Ace and Keke.',
+      image: getPublicImageUrl('intern/MiMeh.webp'),
+      linkedin: 'https://www.linkedin.com/in/mi-meh-168469377/'
     },
     {
       id: 3,
-      name: 'Intern 3',
-      position: 'Executive Board Intern',
-      major: 'TBD',
-      year: 'TBD',
-      bio: 'Join our team!',
-      image: 'https://placehold.co/300x300/f5f5f7/1d1d1f?text=SASE+Intern',
+      name: 'Charlie Hill',
+      position: 'Vice President Intern',
+      major: 'Aerospace Engineering Master\'s',
+      year: 'Graduate Student',
+      bio: 'Hello! I\'m Charlie, a first year master\'s student. I enjoy various hobbies from bouldering and soccer to video games, guitar and D&D. I\'m very excited to become more involved with CSU\'s community, the greater SASE community, and meet lots of interesting people!',
+      image: getPublicImageUrl('intern/Charlie.webp'),
       linkedin: ''
     },
     {
       id: 4,
-      name: 'Intern 4',
-      position: 'Executive Board Intern',
-      major: 'TBD',
-      year: 'TBD',
-      bio: 'Join our team!',
-      image: 'https://placehold.co/300x300/f5f5f7/1d1d1f?text=SASE+Intern',
+      name: 'Kacey Hoang',
+      position: 'Fundraising Intern',
+      major: 'Civil Engineering',
+      year: 'Freshman',
+      bio: 'I like to crochet, sketch, take digital camera pictures and nap. I hope to contribute to the growth in the sase community at CSU.',
+      image: getPublicImageUrl('intern/Kacey.webp'),
       linkedin: ''
     },
     {
       id: 5,
-      name: 'Intern 5',
-      position: 'Executive Board Intern',
-      major: 'TBD',
-      year: 'TBD',
-      bio: 'Join our team!',
-      image: 'https://placehold.co/300x300/f5f5f7/1d1d1f?text=SASE+Intern',
-      linkedin: ''
+      name: 'Dylan Stoner',
+      position: 'Event Coordination Intern',
+      major: 'Computer Science',
+      year: 'Freshman',
+      bio: 'Some hobbies I have is going to the gym and walking at night and playing video games. What I hope to accomplish in SASE is to learn and get more experience in the real world and to get more connections.',
+      image: getPublicImageUrl('intern/dylan.webp'),
+      linkedin: 'https://www.linkedin.com/in/dylan-stoner-4b259b398/'
     },
     {
       id: 6,
-      name: 'Intern 6',
-      position: 'Executive Board Intern',
-      major: 'TBD',
-      year: 'TBD',
-      bio: 'Join our team!',
-      image: 'https://placehold.co/300x300/f5f5f7/1d1d1f?text=SASE+Intern',
+      name: 'Winny Zhang',
+      position: 'Marketing Intern',
+      major: 'Computer Science with a concetration in Human Computer Interaction',
+      year: 'Sophomore',
+      bio: 'I love doing nails, trying new foods, traveling, photo booth, and hang out with friends! Something I hope to accomplish in SASE is gaining hands-on experiences while also meeting new people! ',
+      image: getPublicImageUrl('intern/Winny.webp'),
       linkedin: ''
     }
   ];
