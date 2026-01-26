@@ -44,8 +44,8 @@ function ExecutiveBoard() {
       id: 4,
       name: 'Lilianna Nono',
       position: 'Fundraising Chair',
-      major: 'Electrical Engineering',
-      year: 'Sophomore',
+      major: 'Business Administration',
+      year: 'Senior',
       bio: 'I like food and I LOVE SHOPPING. I travel A LOT!!',
       image: getPublicImageUrl('lilianna.webp'),
       linkedin: 'https://www.linkedin.com/in/lilianna-nono-9ab500325/'
