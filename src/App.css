@@ -136,9 +136,10 @@ main {
 }
 
 .btn:hover {
-  background: #2a5f38; /* Slightly lighter than CSU green */
+  background: white; /* Slightly lighter than CSU green */
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: var(--csu-green);
 }
 
 .form-success {
